@@ -7,6 +7,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class IButtonResponse {
-    private String invertedId;
+public class InvertedDallasKeyResponse {
+    private String invertedDallasKey;
 }

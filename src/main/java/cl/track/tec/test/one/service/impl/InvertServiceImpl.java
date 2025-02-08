@@ -1,10 +1,8 @@
 package cl.track.tec.test.one.service.impl;
 
 import cl.track.tec.test.one.service.InvertService;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-@Slf4j
 @Service
 public class InvertServiceImpl implements InvertService {
     @Override

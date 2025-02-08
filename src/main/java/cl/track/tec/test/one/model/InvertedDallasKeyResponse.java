@@ -1,12 +1,18 @@
 package cl.track.tec.test.one.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
-@AllArgsConstructor
 public class InvertedDallasKeyResponse {
+
     private String invertedDallasKey;
+
+    public InvertedDallasKeyResponse(String invertedDallasKey) {
+        this.invertedDallasKey = invertedDallasKey;
+    }
+
+    public String getInvertedDallasKey() {
+        return invertedDallasKey;
+    }
+
+    public void setInvertedDallasKey(String invertedDallasKey) {
+        this.invertedDallasKey = invertedDallasKey;
+    }
 }

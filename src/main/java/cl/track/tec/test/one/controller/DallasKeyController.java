@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/v1/test/one")
+@RequestMapping("/api/v1/test")
 @Tag(name = "Dallas Key", description = "Dallas key exercise")
 public class DallasKeyController {
 
     private final DallasKeyService dallasKeyService;
 
-    @GetMapping("/dallas-keys/{dallasKey}/invert")
+    @GetMapping("/one/dallas-keys/{dallasKey}/invert")
     @Operation(summary = "Invert a dallas key")
     public ResponseEntity<InvertedDallasKeyResponse> invert(@PathVariable String dallasKey) {
         return ResponseEntity.ok(dallasKeyService.invert(dallasKey));

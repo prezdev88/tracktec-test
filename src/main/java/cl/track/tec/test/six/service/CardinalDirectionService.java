@@ -1,7 +1,7 @@
 package cl.track.tec.test.six.service;
 
-import cl.track.tec.test.six.model.Position;
+import cl.track.tec.test.six.model.dto.PositionDto;
 
 public interface CardinalDirectionService {
-    String getCardinalDirection(Position position);
+    String getCardinalDirection(PositionDto positionDto);
 }

@@ -1,14 +1,14 @@
 package cl.track.tec.test.six.service.impl;
 
-import cl.track.tec.test.six.model.Position;
+import cl.track.tec.test.six.model.dto.PositionDto;
 import cl.track.tec.test.six.service.CardinalDirectionService;
 import org.springframework.stereotype.Service;
 
 @Service
 public class CardinalDirectionServiceImpl implements CardinalDirectionService {
     @Override
-    public String getCardinalDirection(Position position) {
-        int orientation = position.getOrientation();
+    public String getCardinalDirection(PositionDto positionDto) {
+        int orientation = positionDto.getOrientation();
 
         if (orientation < 0 || orientation >= 360) {
             return "Desconocido";

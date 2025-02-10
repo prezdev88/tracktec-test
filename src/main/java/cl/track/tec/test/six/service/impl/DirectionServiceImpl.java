@@ -1,7 +1,7 @@
 package cl.track.tec.test.six.service.impl;
 
-import cl.track.tec.test.six.model.GpsData;
-import cl.track.tec.test.six.model.Position;
+import cl.track.tec.test.six.model.dto.GpsDataDto;
+import cl.track.tec.test.six.model.dto.PositionDto;
 import cl.track.tec.test.six.service.CardinalDirectionService;
 import cl.track.tec.test.six.service.DirectionService;
 import org.springframework.stereotype.Service;
@@ -16,12 +16,12 @@ public class DirectionServiceImpl implements DirectionService {
     }
 
     @Override
-    public GpsData addDirection(GpsData gpsData) {
-        for (Position position : gpsData.getPositions()) {
-            String direction = cardinalDirectionService.getCardinalDirection(position);
-            position.setDirection(direction);
+    public GpsDataDto addDirection(GpsDataDto gpsDataDto) {
+        for (PositionDto positionDto : gpsDataDto.getPositions()) {
+            String direction = cardinalDirectionService.getCardinalDirection(positionDto);
+            positionDto.setDirection(direction);
         }
 
-        return gpsData;
+        return gpsDataDto;
     }
 }

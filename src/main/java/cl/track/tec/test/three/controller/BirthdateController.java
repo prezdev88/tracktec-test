@@ -6,6 +6,7 @@ import cl.track.tec.test.three.service.BirthdayService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,15 +14,12 @@ import org.springframework.web.bind.annotation.*;
 import java.time.format.DateTimeParseException;
 
 @RestController
+@AllArgsConstructor
 @RequestMapping("/api/v1/test")
 @Tag(name = "Birthdate days", description = "Get days since date of birth")
 public class BirthdateController {
 
     private final BirthdayService birthdayService;
-
-    public BirthdateController(BirthdayService birthdayService) {
-        this.birthdayService = birthdayService;
-    }
 
     @GetMapping("/three/birthdate/{birthdate}")
     @Operation(summary = "Get days since date of birth")

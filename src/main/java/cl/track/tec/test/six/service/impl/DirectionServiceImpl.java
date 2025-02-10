@@ -4,18 +4,16 @@ import cl.track.tec.test.six.model.dto.GpsDataDto;
 import cl.track.tec.test.six.model.dto.PositionDto;
 import cl.track.tec.test.six.service.CardinalDirectionService;
 import cl.track.tec.test.six.service.DirectionService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@AllArgsConstructor
 public class DirectionServiceImpl implements DirectionService {
 
     private final CardinalDirectionService cardinalDirectionService;
-
-    public DirectionServiceImpl(CardinalDirectionService cardinalDirectionService) {
-        this.cardinalDirectionService = cardinalDirectionService;
-    }
 
     @Override
     public GpsDataDto addDirection(GpsDataDto gpsDataDto) {

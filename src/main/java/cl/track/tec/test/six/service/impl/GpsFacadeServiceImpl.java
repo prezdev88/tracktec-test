@@ -4,18 +4,15 @@ import cl.track.tec.test.six.model.dto.GpsDataDto;
 import cl.track.tec.test.six.service.DirectionService;
 import cl.track.tec.test.six.service.GpsFacadeService;
 import cl.track.tec.test.six.service.PositionService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@AllArgsConstructor
 public class GpsFacadeServiceImpl implements GpsFacadeService {
 
-    private final DirectionService directionService;
     private final PositionService positionService;
-
-    public GpsFacadeServiceImpl(DirectionService directionService, PositionService positionService) {
-        this.directionService = directionService;
-        this.positionService = positionService;
-    }
+    private final DirectionService directionService;
 
     @Override
     public GpsDataDto execute(GpsDataDto gpsDataDto) {

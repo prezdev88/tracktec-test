@@ -6,6 +6,8 @@ import cl.track.tec.test.six.service.CardinalDirectionService;
 import cl.track.tec.test.six.service.DirectionService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class DirectionServiceImpl implements DirectionService {
 
@@ -17,10 +19,12 @@ public class DirectionServiceImpl implements DirectionService {
 
     @Override
     public GpsDataDto addDirection(GpsDataDto gpsDataDto) {
-        for (PositionDto positionDto : gpsDataDto.getPositions()) {
+        List<PositionDto> positions = gpsDataDto.getPositions();
+
+        positions.forEach(positionDto -> {
             String direction = cardinalDirectionService.getCardinalDirection(positionDto);
             positionDto.setDirection(direction);
-        }
+        });
 
         return gpsDataDto;
     }

@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/test")
-@Tag(name = "GPS Data", description = "GPS Data")
-public class GpsController {
+@Tag(name = "GPS Positions", description = "GPS Positions")
+public class PositionController {
 
     private final GpsFacadeService gpsFacadeService;
 
-    public GpsController(GpsFacadeService gpsFacadeService) {
+    public PositionController(GpsFacadeService gpsFacadeService) {
         this.gpsFacadeService = gpsFacadeService;
     }
 

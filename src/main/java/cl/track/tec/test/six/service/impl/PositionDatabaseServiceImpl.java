@@ -6,6 +6,8 @@ import cl.track.tec.test.six.model.entity.PositionEntity;
 import cl.track.tec.test.six.repository.PositionRepository;
 import cl.track.tec.test.six.service.PositionDatabaseService;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
@@ -21,6 +23,7 @@ public class PositionDatabaseServiceImpl implements PositionDatabaseService {
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void save(PositionDto positionDto) {
         try {
             PositionEntity positionEntity = positionMapper.map(positionDto);
